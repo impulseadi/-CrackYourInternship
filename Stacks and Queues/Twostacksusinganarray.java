@@ -1,35 +1,48 @@
-class Solution {
-    public boolean backspaceCompare(String s, String t) {
-        Stack<Character> s1 = new Stack<>();
-        Stack<Character> s2 = new Stack<>();
-        //Pushing and poping elements in stack s1
-        for(int i = 0; i < s.length(); i++){
-            if(s.charAt(i) == '#'){
-                if(s1.size() != 0){
-                    s1.pop();
-                }
-            }
-            else{
-                s1.push(s.charAt(i));
-            }
-        }
-        //Pushing and poping elements in stack s2
-        for(int i = 0; i < t.length(); i++){
-            if(t.charAt(i) == '#'){
-                if(s2.size() != 0){
-                    s2.pop();
-                }
-                
-            }
-            else{
-                s2.push(t.charAt(i));
-            }
-        }
-        
-        if((s1.toString()).equals(s2.toString())){//Converting stack to string and then comparing them
-            return true;
-        }
-        
-        return false;
-    }
-}
+stack1.
+   void push1(int x, TwoStack sq)
+   {
+
+       // There is at least one empty space for
+       // new element
+       if (sq.top1 < sq.top2 - 1) {
+           sq.top1++;
+           sq.arr[sq.top1] = x;
+       }
+
+   }
+
+   //Function to push an integer into the stack2.
+   void push2(int x, TwoStack sq)
+   {
+       // There is at least one empty space for
+       // new element
+       if (sq.top1 < sq.top2 - 1) {
+           sq.top2--;
+           sq.arr[sq.top2] = x;
+       }
+
+   }
+
+   //Function to remove an element from top of the stack1.
+   int pop1(TwoStack sq)
+   {
+           if (sq.top1 >= 0) {
+           int x = sq.arr[sq.top1];
+           sq.top1--;
+           return x;
+       }
+
+       return -1;
+   }
+
+   //Function to remove an element from top of the stack2.
+   int pop2(TwoStack sq)
+   {
+           if (sq.top2 < sq.size) {
+           int x = sq.arr[sq.top2];
+           sq.top2++;
+           return x;
+       }
+
+       return -1;
+   }
